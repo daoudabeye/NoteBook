@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    networks:
+      - postgresnetwork
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - "postgres-data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    networks:
+      - postgresnetwork
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@postgres.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+volumes:
+  postgres-data:
+networks:
+  postgresnetwork:
+    name:  postgresnetwork
