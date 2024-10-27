@@ -1,0 +1,1000 @@
+353  sudo ls /etc/
+  354  microk8s calicoctl
+  355  curl -L https://github.com/projectcalico/calico/releases/latest/download/calicoctl-linux-amd64 -o calicoctl
+  356  sudo install -o beye -g beye 755 calicoctl /usr/local/bin/
+  357  history 
+  358  sudo install -o beye -g beye -m 0755 calicoctl /usr/local/bin/calicoctl
+  359  kubectl calico -h
+  360  ls
+  361  cd ikawari/
+  362  ls
+  363  vi ippool.yam
+  364  calicoctl create -f ippool.yam -n ikawari
+  365  vi ippool.yam 
+  366  calicoctl create -f ippool.yam -n ikawari
+  367  sudo apt update
+  368  sudo apt upgrade
+  369  vi ippool.yam 
+  370  calicoctl create -f ippool.yam -n ikawari
+  371  calicoctl create -f ippool.yam -n ikawari --allow-version-mismatch
+  372  vi /var/snap/microk8s/current/args/cni-network/cni.yaml
+  373  calicoctl get ippool
+  374  calicoctl get ippool --allow-version-mismatch
+  375  vi /var/snap/microk8s/current/args/cni-network/cni.yaml
+  376  calicoctl describe default-ipv4-ippool --allow-version-mismatch
+  377  calicoctl get ippool -o wide
+  378  calicoctl get ippool -o wide --allow-version-mismatch
+  379  kubectl get IPPool
+  380  kubectl describe IPPool default-ipv4-ippool
+  381  vi ippool.yam 
+  382  calicoctl create -f ippool.yam 
+  383  calicoctl create -f ippool.yam --allow-version-mismatch 
+  384  calicoctl get ippool -o wide --allow-version-mismatch
+  385  vi ippool.yam 
+  386  calicoctl create -f ippool.yam --allow-version-mismatch
+  387  vi ippool.yam 
+  388  calicoctl create -f ippool.yam --allow-version-mismatch
+  389  vi ippool.yam 
+  390  calicoctl create -f ippool.yam --allow-version-mismatch
+  391  vi ippool.yam 
+  392  calicoctl create -f ippool.yam --allow-version-mismatch
+  393  calicoctl get ippool -o wide --allow-version-mismatch
+  394  vi ippool.yam 
+  395  kubectl delete IPPoll new-pool1
+  396  kubectl get IPPool
+  397  kubectl delete IPPool new-pool1
+  398  rm ippool.yam 
+  399  vi ippool.yaml
+  400  kubectl create namespace ikawari
+  401  calicoctl get ippool -o wide --allow-version-mismatch
+  402  ls
+  403  calicoctl create -f ippool.yaml --allow-version-mismatch
+  404  vi ippool.yaml 
+  405  calicoctl create -f ippool.yaml --allow-version-mismatch
+  406  vi ippool.yaml 
+  407  calicoctl create -f ippool.yaml --allow-version-mismatch
+  408  vi ippool.yaml 
+  409  calicoctl create -f ippool.yaml --allow-version-mismatch
+  410  vi ippool.yaml 
+  411  calicoctl create -f ippool.yaml --allow-version-mismatch
+  412  vi ippool.yaml 
+  413  calicoctl create -f ippool.yaml --allow-version-mismatch
+  414  calicoctl get ippool -o wide --allow-version-mismatch
+  415  vi ipreservation.yaml
+  416  calicoctl create -f ipreservation.yaml --allow-version-mismatch
+  417  vi ipreservation.yaml 
+  418  kubectl create namesapce ikawari
+  419  kubectl create namespace ikawari
+  420  vi ipreservation.yaml 
+  421  free -h
+  422  htop
+  423  cd
+  424  ls /var/snap/microk8s/common/default-storage/ikawari-nodedata-ikawaripeer3-node-0-pvc-760b6b57-fe62-4fac-8a01-df16b943a811
+  425  ls /var/snap/microk8s/common/default-storage/ikawari-nodedata-ikawaripeer3-node-0-pvc-760b6b57-fe62-4fac-8a01-df16b943a811/ikawariregtest/
+  426  ls /var/snap/microk8s/common/default-storage/ikawari-nodedata-ikawaripeer3-node-0-pvc-760b6b57-fe62-4fac-8a01-df16b943a811/ikawariregtest/ikawariRegTest/
+  427  ls /var/snap/microk8s/common/default-storage/
+  428  ls
+  429  helm repo add nextcloud https://nextcloud.github.io/helm/
+  430  helm repo update
+  431  helm install my-release nextcloud/nextcloud
+  432  helm delete my-release
+  433  helm list
+  434  helm list -n webfocus
+  435  helm install mariadb -n databases oci://registry-1.docker.io/bitnamicharts/mariadb
+  436  kubectl create namespace databases
+  437  helm install mariadb -n databases oci://registry-1.docker.io/bitnamicharts/mariadb
+  438  ROOT_PASSWORD=$(kubectl get secret --namespace databases mariadb -o jsonpath="{.data.mariadb-root-password}" | base64 -d)
+  439  echo ROOT_PASSWORD
+  440  echo £ROOT_PASSWORD
+  441  echo $ROOT_PASSWORD
+  442  helm upgrade --namespace databases mariadb oci://registry-1.docker.io/bitnamicharts/mariadb --set auth.rootPassword=$ROOT_PASSWORD
+  443  vi mariapwd.txt
+  444  cat mariapwd.txt 
+  445  vi mariapwd.txt 
+  446  helm install --name nexcloud -n cloud-tech   --set nextcloud.username=admin,nextcloud.password=tibco2023,mariadb.auth.rootPassword=AmkUVBQUmy     nextcloud/nextcloud
+  447  helm install nexcloud -n cloud-tech   --set nextcloud.username=admin,nextcloud.password=tibco2023,mariadb.auth.rootPassword=AmkUVBQUmy     nextcloud/nextcloud
+  448  kubectl create namesapce cloud-tech
+  449  kubectl create namespace cloud-tech
+  450  helm install nexcloud -n cloud-tech   --set nextcloud.username=admin,nextcloud.password=tibco2023,mariadb.auth.rootPassword=AmkUVBQUmy     nextcloud/nextcloud
+  451  export APP_HOST=154.68.23.245
+  452  export APP_PASSWORD=$(kubectl get secret --namespace cloud-tech nexcloud-nextcloud -o jsonpath="{.data.nextcloud-password}" | base64 --decode)
+  453  kubectl run mariadb-client --rm --tty -i --restart='Never' --image  docker.io/bitnami/mariadb:11.0.3-debian-11-r5 --namespace databases --command -- bash
+  454  helm upgrade --namespace cloud-tech nexcloud nextcloud/nextcloud     --set nextcloud.password=$APP_PASSWORD,nextcloud.host=$APP_HOST,service.type=NodePort,mariadb.enabled=true,externalDatabase.user=root,externalDatabase.database=nextcloud,externalDatabase.host=mariadb.databases.svc.cluster.local,externalDatabase.password=AmkUVBQUmy
+  455  echo $APP_PASSWORD
+  456  helm upgrade --namespace cloud-tech nexcloud nextcloud/nextcloud --set nextcloud.username=admin,mariadb.auth.rootPassword=AmkUVBQUmy,nextcloud.password=$APP_PASSWORD,nextcloud.host=$APP_HOST,service.type=NodePort,mariadb.enabled=true,externalDatabase.user=root,externalDatabase.database=nextcloud,externalDatabase.host=mariadb.databases.svc.cluster.local,externalDatabase.password=AmkUVBQUmy
+  457  helm upgrade --namespace cloud-tech nexcloud nextcloud/nextcloud --set nextcloud.username=admin,mariadb.auth.rootPassword=AmkUVBQUmy,nextcloud.password=$APP_PASSWORD,nextcloud.host=$APP_HOST,service.type=ClusterIP,mariadb.enabled=true,externalDatabase.user=root,externalDatabase.database=nextcloud,externalDatabase.host=mariadb.databases.svc.cluster.local,externalDatabase.password=AmkUVBQUmy
+  458  kubectl create namespace nextcloud
+  459  helm upgrade --namespace nexcloud nexcloud nextcloud/nextcloud --set nextcloud.username=admin,mariadb.auth.rootPassword=AmkUVBQUmy,nextcloud.password=$APP_PASSWORD,nextcloud.host=$APP_HOST,service.type=ClusterIP,mariadb.enabled=true,externalDatabase.user=root,externalDatabase.database=nextcloud,externalDatabase.host=mariadb.databases.svc.cluster.local,externalDatabase.password=AmkUVBQUmy
+  460  helm install nexcloud -n nextcloud --set nextcloud.username=admin,nextcloud.password=tibco2023,mariadb.auth.rootPassword=AmkUVBQUmy,nextcloud.host=$APP_HOST,service.type=LoadBalancer nextcloud/nextcloud
+  461  ip a
+  462  ping 10.1.156.119
+  463  cd TIB_dsmlce_1.0.3_linux_x86_64/
+  464  ls
+  465  ls dsml-build-context/
+  466  ls scripts/
+  467  cat ~/.docker/config.json
+  468  history 
+  469  ls
+  470  tar -xvf TIB_dsmlce_1.0.3_linux_x86_64.tar 
+  471  ls
+  472  cd TIB_dsmlce_1.0.3_linux_x86_64/
+  473  ls
+  474  cd scripts/
+  475  ls
+  476  ./build-images.sh 
+  477  ls
+  478  vi dsml-chart/resource-values.yaml 
+  479  helm install dsml -f dsml-chart/resource-values.yaml dsml-chart -n dsml-webfocus --create-namespace
+  480  ls
+  481  cd dsml-chart/
+  482  ls
+  483  vi values.yaml 
+  484  docker tag a6e219912ba3 localhost:32000/ibi2020/dsml-webfocus:nlp-9.2-1.0.3
+  485  docker tag 344ec2e1ecd6 localhost:32000/ibi2020/dsml-webfocus:nlq-9.2-1.0.3
+  486  docker tag 15ab12318f0d localhost:32000/ibi2020/dsml-webfocus:analytics-9.2-1.0.3
+  487  docker tag d82b5e7425f1 localhost:32000/ibi2020/dsml-webfocus:metadata-9.2-1.0.3
+  488  docker tag ab47976674dc localhost:32000/ibi2020/dsml-webfocus:ml-functions-9.2-1.0.3
+  489  docker push localhost:32000/ibi2020/dsml-webfocus:nlp-9.2-1.0.3
+  490  docker push localhost:32000/ibi2020/dsml-webfocus:nlq-9.2-1.0.3
+  491  docker push localhost:32000/ibi2020/dsml-webfocus:analytics-9.2-1.0.3
+  492  vi TIB_dsmlce_1.0.3_linux_x86_64/scripts/dsml-chart/values.yaml 
+  493  kubectl logs --namespace=kube-system coredns
+  494  kubectl logs --namespace=kube-system coredns-7745f9f87f-98224
+  495  kubectl -n kube-system rollout restart deployment coredns-7745f9f87f-98224
+  496  kubectl -n kube-system rollout restart pod coredns-7745f9f87f-98224
+  497  docker push localhost:32000/ibi2020/dsml-webfocus:metadata-9.2-1.0.3
+  498  docker push localhost:32000/ibi2020/dsml-webfocus:ml-functions-9.2-1.0.3
+  499  cd TIB_dsmlce_1.0.3_linux_x86_64/
+  500  ls
+  501  cd scripts/dsml-chart/
+  502  ls
+  503  vi values.yaml 
+  504  cd ..
+  505  helm install dsml -f dsml-chart/resource-values.yaml dsml-chart -n dsml-webfocus --create-namespace
+  506  kubectl -n dsml-webfocus get pods -l app.kubernetes.io/component=dsml
+  507  kubectl -n webfocus exec -it edaserver-0 -- /bin/bash
+  508  reboot 
+  509  sudo reboot 
+  510  kubectl -n webfocus exec -it edaserver-0 -- /bin/bash
+  511  export POSTGRES_PASSWORD=$(kubectl get secret --namespace kiwierp pgsql-kiwi-postgresql -o jsonpath="{.data.postgres-password}" | base64 -d)
+  512  kubectl run pgsql-kiwi-postgresql-client --rm --tty -i --restart='Never' --namespace kiwierp --image docker.io/bitnami/postgresql:15.4.0-debian-11-r10 --env="PGPASSWORD=$POSTGRES_PASSWORD"       --command -- psql --host pgsql-kiwi-postgresql -U postgres -d postgres -p 5432
+  513  echo $POSTGRES_PASSWORD
+  514  docker ps
+  515  dokcer images
+  516  docker images
+  517  ls
+  518  ls TIB_wfce_1.1.1
+  519  ls TIB_wfce_1.1.1/scripts/
+  520  cd TIB_wfce_1.1.1/
+  521  cd scripts/
+  522  ls
+  523  ls charts/
+  524  ls helmfile/
+  525  ls helmfile/helm_dir/
+  526  cd
+  527  ls
+  528  ls TIB_dsmlce_1.0.3_linux_x86_64
+  529  ls TIB_dsmlce_1.0.3_linux_x86_64/scripts/
+  530  ls
+  531  ls ikawari/
+  532  cd ikawari/
+  533  ls
+  534  vi ippool.yaml 
+  535  vi ipreservation.yaml 
+  536  vi ippool.yaml 
+  537  history 
+  538  kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh
+  539  ls
+  540  vi docker-compose.yml 
+  541  docker compose up -d --profile node
+  542  docker compose --profile node up -d
+  543  netstat -tlnp
+  544  vi docker-compose.yml 
+  545  mkdir ikawari
+  546  ls ikawari/
+  547  mv docker-compose.yml ikawari/
+  548  cd ikawari/
+  549  vi .env
+  550  docker compose down
+  551  ls
+  552  docker ps
+  553  docker stop bc2e916dc0b6
+  554  docker rm bc2e916dc0b6
+  555  docker volume ls
+  556  docker volume rm beye_bitcoin_datadir
+  557  docker compose --profile node -d up
+  558  docker compose --profile node up -d
+  559  docker logs ikpayserver
+  560  docker logs ikpayserver --follow
+  561  history 
+  562  ls /var/snap/microk8s/common/default-storage/
+  563  ls /var/snap/microk8s/common/default-storage/webfocus-data-etcd-0-pvc-53eb2718-5c7c-485a-9d80-42f45edec17d/
+  564  ls /var/snap/microk8s/common/default-storage/webfocus-data-etcd-0-pvc-53eb2718-5c7c-485a-9d80-42f45edec17d/data/
+  565  sudo ls /var/snap/microk8s/common/default-storage/webfocus-data-etcd-0-pvc-53eb2718-5c7c-485a-9d80-42f45edec17d/data/
+  566  sudo ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/
+  567  sudo ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/
+  568  sudo ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/espace_de_travaille/
+  569  sudo ls -ll /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/espace_de_travaille/
+  570  sudo ls -ll /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/espace_de_travaille/appanlc/
+  571  docker ps
+  572  ls
+  573  cd ikawari/
+  574  ls
+  575  docker compose down
+  576  docker ps
+  577  docker stop 75c5e7df6b90
+  578  docker rm 75c5e7df6b90
+  579  docker volume prune
+  580  docker container prune
+  581  docker volume ls
+  582  docker volume rm ikawari_bitcoin_datadir
+  583  docker compose --profile node up -d
+  584  ls
+  585  vi docker-compose.yml 
+  586  docker ps
+  587  docker stop 7303ac099c5b
+  588  docker rm container 7303ac099c5b
+  589  dockercontainer rm 7303ac099c5b
+  590  docker container rm 7303ac099c5b
+  591  docker ps
+  592  docker containe ls a
+  593  docker containe ls -a
+  594  docker container ls -a
+  595  docker volume ls
+  596  docker volume rm ikawari_bitcoin_datadir
+  597  ls
+  598  cd ikawari/
+  599  ls
+  600  docker compose --profile node up -d
+  601  ls
+  602  ls /opt/ibi/srv/storage/apps/
+  603  sudo ls /opt/ibi/srv/storage/apps/
+  604  sudo su
+  605  history 
+  606  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/
+  607  ls -ll /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/
+  608  ls
+  609  ls -ll
+  610  cp insurance/* /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  611  ls -ll/var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  612  ls -ll /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  613  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/
+  614  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/sudo ls /var/snap/microk8s/common/default-storage/webfocus-data-etcd-0-pvc-53eb2718-5c7c-485a-9d80-42f45edec17d/data/
+  615  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/sudo ls /var/snap/microk8s/common/default-storage/webfocus-data-etcd-0-pvc-53eb2718-5c7c-485a-9d80-42f45edec17d/
+  616  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/sudo ls /var/snap/microk8s/common/default-storage/webfocus-data-etcd-0-pvc-53eb2718-5c7c-485a-9d80-42f45edec17d/data/
+  617  sudo ls /var/snap/microk8s/common/default-storage/webfocus-data-etcd-0-pvc-53eb2718-5c7c-485a-9d80-42f45edec17d/data/
+  618  sudo ls /var/snap/microk8s/common/default-storage/
+  619  sudo ls /var/snap/microk8s/common/default-storage/webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f
+  620  history 
+  621  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/
+  622  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/
+  623  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinne_v2/map/
+  624  cp STRUCTURE_MINIERE_CADASTRE_GUINEE_PL.dbf /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinne_v2/map/
+  625  cp STRUCTURE_MINIERE_CADASTRE_GUINEE_PL.shp /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinne_v2/map/
+  626  ls
+  627  cp STRUCTURE_MINIERE_CADASTRE_GUINEE_PL.* /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinne_v2/map/
+  628  cp STRUCTURE_MINIERE_CADASTRE_GUINEE_PL.prj /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinne_v2/map/
+  629  ls
+  630  history 
+  631  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinne_v2/decoupage_administratif/
+  632  ls
+  633  cd DBF_DECOUPAGE_ADMINISTRAFIF_GUINEE/
+  634  ls
+  635  cp ./* /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinne_v2/decoupage_administratif/
+  636  cd ins
+  637  history 
+  638  cp ./* /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  639  ls -ll /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  640  ls
+  641  cd ..
+  642  ls
+  643  ls -ll insurance/
+  644  cd insurance/
+  645  cp insurance.acx /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  646  cp insurance.foc /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  647  cp geography.foc /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  648  cp demographics.foc /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  649  cp *.mas /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  650  rm ./*
+  651  ls
+  652  cp ./* /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/insurance/
+  653  history 
+  654  cp /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinee/entreprise_miniere_datacsv.* .
+  655  cp /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/anlc_guinee/entreprise_miniere_datarec01.ftm .
+  656  ls
+  657  history 
+  658  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/
+  659  ls -l /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/
+  660  ls
+  661  mv cartoguinee/* /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/cartoguinee/
+  662  sudo apt update
+  663  ls
+  664  cd DONNEECARTO/
+  665  ls
+  666  history 
+  667  mv * /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/cartoguinee/donnees_carto_guinee/
+  668  exit
+  669  cd DONNEECARTO/
+  670  mv * /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/cartoguinee/donnees_carto_guinee/
+  671  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/cartoguinee/donnees_carto_guinee/
+  672  sudo reboot 
+  673  sudo apt update 
+  674  sudo apt upgrade
+  675  cd DONNEECARTO/
+  676  ls
+  677  mv * /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/cartoguinee/donnee_carto_centro/
+  678  ls /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/apps/cartoguinee/donnee_carto_centro/
+  679  cd /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/
+  680  ls
+  681  cd ..
+  682  ls
+  683  cd ..
+  684  ls
+  685  ls /etc/default/locale
+  686  ls
+  687  sudo locale-gen fr_FR.UTF-8
+  688  sudo dpkg-reconfigure locales
+  689  sudo update-locale LANG=fr_FR.UTF-8
+  690  nano /var/lib/locales/supported.d/local
+  691  locale
+  692  sudo nano /etc/default/locale
+  693  sudo apt-get install language-pack-fr
+  694  dpkg-reconfigure locales
+  695  sudo dpkg-reconfigure locales
+  696  sudo apt-get install language-pack-fr-FR
+  697  sudo apt-get install language-pack-fr.FR
+  698  history 
+  699  locale
+  700  sudo nano /etc/default/locale
+  701  sudo reboot 
+  702  locale
+  703  ls
+  704  history 
+  705  microk8s status
+  706  history 
+  707  ls /var/snap/microk8s/common/default-storage/
+  708  ls webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f
+  709  ls /var/snap/microk8s/common/default-storage/webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f
+  710  ls /var/snap/microk8s/common/default-storage/webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/cm
+  711  ls /var/snap/microk8s/common/default-storage/webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/apps/
+  712  ls /var/snap/microk8s/common/default-storage/webfocus-eda-etc-121-v16-pvc-59dfac31-8888-41cc-9d56-70529c3f2916
+  713  ls /var/snap/microk8s/common/default-storage/webfocus-clm-storage-pvc-f5f7dcba-b0b4-40ca-aeb7-ad3e31b1da54
+  714  ls /var/snap/microk8s/common/default-storage/webfocus-clm-storage-pvc-f5f7dcba-b0b4-40ca-aeb7-ad3e31b1da54/wfs/
+  715  ls /var/snap/microk8s/common/default-storage/webfocus-clm-storage-pvc-f5f7dcba-b0b4-40ca-aeb7-ad3e31b1da54/wfs/bin/
+  716  ping 10.1.156.105
+  717  ping 8.8.8.8
+  718  ping 10.1.156.105
+  719  ls
+  720  netstat -tlnp
+  721  history 
+  722  docker ps
+  723  helm install nexcloud -n nextcloud --set nextcloud.username=admin,nextcloud.password=tibco2023,mariadb.auth.rootPassword=AmkUVBQUmy,nextcloud.host=$APP_HOST,service.type=LoadBalancer nextcloud/nextcloud
+  724  helm repo update
+  725  kubectl create namespace nextcloud
+  726  export APP_HOST=154.68.23.245
+  727  helm install nexcloud -n nextcloud --set nextcloud.username=admin,nextcloud.password=tibco2023,mariadb.auth.rootPassword=AmkUVBQUmy,nextcloud.host=$APP_HOST,service.type=LoadBalancer nextcloud/nextcloud
+  728  kubectl get svc --namespace nextcloud -w nexcloud-nextcloud
+  729  netstat -tlnp
+  730  ls
+  731  history 
+  732  find ./apps
+  733  find . apps
+  734  find / apps
+  735  find / www
+  736  find / -f www
+  737  ls 
+  738  sudo su
+  739  history 
+  740  find -help
+  741  find -f index.php
+  742  sudo systemctl reload apache2
+  743  sudo systemctl reload apache
+  744  sudo apt update
+  745  sudo apt upgrade
+  746  sudo reboot 
+  747  netstat -tlnp
+  748  fing / -name config.php
+  749  find / -name config.php
+  750  sudo su
+  751  history 
+  752  sudo snap remove nextcloud
+  753  sudo snap remove --purge nextcloud
+  754  netstat -tlnp
+  755  nslookup pay.ikawaari.com
+  756  history 
+  757  ls /var/snap/microk8s/common/default-storage/
+  758  sudo reboot 
+  759  history 
+  760  cd /var/snap/microk8s/common/default-storage/webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/
+  761  ls
+  762  cd config/
+  763  ls
+  764  cd web_resource/
+  765  ls
+  766  cd signin/
+  767  ls
+  768  chmod -R 777 .
+  769  ls 
+  770  ls -l
+  771  ls -l images/
+  772  cd ..
+  773  ls -l
+  774  cd config/
+  775  ls -l
+  776  cd web_resource/
+  777  ls -l
+  778  cd signin/
+  779  ls -l
+  780  uname
+  781  uname -a
+  782  pwd
+  783  ll
+  784  id
+  785  pwd
+  786  cd /
+  787  ll
+  788  cd var
+  789  ll
+  790  cd snap/
+  791  ll
+  792  cd microk8s/
+  793  ll
+  794  ll common/
+  795  cd common/
+  796  cd 
+  797  cd default-storage/
+  798  ll
+  799  cd webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/
+  800  ll
+  801  ll apps
+  802  ll apps/anlc2/
+  803  pwd
+  804  ll
+  805  ll apps/
+  806  df -Th
+  807  df -Th apps/
+  808  ll
+  809  df -Th logs/
+  810  ll logs/
+  811  cd logs/
+  812  vim audit.log
+  813  vim event.log
+  814  cd ../cm
+  815  ll
+  816  cd export/
+  817  ll
+  818  cd portal_anlc/
+  819  ll
+  820  ll root/
+  821  cd root
+  822  cd WFC/
+  823  ll
+  824  cd Repository/
+  825  ll
+  826  cd ANLC/
+  827  ll
+  828  ll PERMIS/
+  829  cat PERMIS/kpi_rs_etsm.fex 
+  830  vim PERMIS/kpi_rs_etsm.fex 
+  831  ll PERMIS/
+  832  cd ..
+  833  ll
+  834  pwd
+  835  cd ANLC/
+  836  ll
+  837  cd PROJETS/
+  838  ll
+  839  cd ../ENTREPRISES/
+  840  ll$
+  841  ll
+  842  cd ../..
+  843  pwd
+  844  ll
+  845  cd ..
+  846  ll
+  847  cd ..
+  848  ll
+  849  cd ..
+  850  ll
+  851  cd root_content/
+  852  ll
+  853  $cd WFC
+  854  cd WFC/
+  855  ll
+  856  cd Repository/
+  857  ll
+  858  cd ANLC/
+  859  ll
+  860  ll PERMIS/
+  861  vim  PERMIS/kpi_pcamept.fex 
+  862  ll PROJETS/
+  863  vim  PERMIS/kpi_pcamept.fex 
+  864  cat  PERMIS/kpi_pcamept.fex 
+  865  sudo apt update
+  866  sudo apt upgrade
+  867  sudo apt install apache2
+  868  sudo ufw app list
+  869  ufw allow 'Apache'
+  870  sudo ufw allow 'Apache'
+  871  $ sudo systemctl status apache2
+  872  sudo systemctl status apache2
+  873  hotname _I
+  874  hotname -I
+  875  hostname -I
+  876  sudo systemctl enable apache2
+  877  nanno /etc/apache2/sites-available/anlc.infobuild-sa.com.conf
+  878  nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf
+  879  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf
+  880  sudo apache2ctl configtest
+  881  systemctl restart apache2
+  882  sudo a2ensite /etc/apache2/sites-available/anlc.infobuild-sa.com.conf
+  883  sudo a2ensite anlc.infobuild-sa.com.conf
+  884  systemctl reload apache2
+  885  journalctl -xeu apache2.service
+  886  sudo apache2ctl configtest
+  887  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf
+  888  sudo apache2ctl configtest
+  889  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf
+  890  sudo apache2ctl configtest
+  891  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf
+  892  sudo apache2ctl configtest
+  893  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf
+  894  sudo apache2ctl configtest
+  895  rm /etc/apache2/sites-enabled/
+  896  sudo a2dissite anlc.infobuild-sa.com.conf
+  897  systemctl reload apache2
+  898  nano /etc/apache2/sites-enabled/000-default.conf 
+  899  sudo nano /etc/apache2/sites-enabled/000-default.conf
+  900  journalctl -xeu apache2.service
+  901  sudo a2enmod proxy
+  902  systemctl restart apache2
+  903  sudo a2enmod proxy_http
+  904  service apache2 reload
+  905  sudo nano /etc/apache2/sites-enabled/000-default.conf
+  906  ls /etc/apache2/sites-enabled/
+  907  ls /etc/apache2/sites-available/
+  908  nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf 
+  909  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf 
+  910  sudo a2ensite anlc.infobuild-sa.com.conf
+  911  systemctl reload apache2
+  912  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com.conf 
+  913  systemctl reload apache2
+  914  sudo nano /etc/apache2/sites-enabled/anlc.infobuild-sa.com.conf 
+  915  sudo apt install certbot python3-certbot-apache
+  916  sudo ufw allow 'Apache Full'
+  917  sudo certbot --apache
+  918  sudo apt install open-vm-tools
+  919  history 
+  920  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com
+  921  sudo nano /etc/apache2/sites-enabled/anlc.infobuild-sa.com
+  922  sudo nano /etc/apache2/sites-enabled/000-default.conf 
+  923  reboot 
+  924  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf 
+  925  sudo systemctl restart apache2
+  926  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf 
+  927  history 
+  928  pwd
+  929  ll
+  930  cd /opt
+  931  ll
+  932  pwd
+  933  cd /var
+  934  ll
+  935  cd snap
+  936  ll
+  937  cd microk8s/
+  938  ll
+  939  ll 6103/
+  940  cd common
+  941  ll
+  942  cd default-storage/
+  943  ll
+  944  cd webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/
+  945  ll
+  946  ll apps
+  947  ll cm
+  948  cd apps
+  949  ll
+  950  cd anlc2/
+  951  ll
+  952  cd ../cm
+  953  cd ../../cm
+  954  ll
+  955  ll export/
+  956  cd /var/snap/microk8s/common/default-storage/webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/
+  957  ll
+  958  cd /var/snap/microk8s/common/default-storage
+  959  ll
+  960  cd  webfocus-eda-etc-121-v16-pvc-59dfac31-8888-41cc-9d56-70529c3f2916/
+  961  ll
+  962  cd ..
+  963  find / -name edastart.*
+  964  id
+  965  su 
+  966  su
+  967  sudo su -
+  968  cd /var/snap/microk8s/common/default-storage/webfocus-eda-storage-pvc-c5159acd-7bbc-4cc3-907f-a73c6739f90c/wfs/bin/edastart
+  969  history 
+  970  cd /var
+  971  ll
+  972  cd /var/snap/microk8s/common/default-storage/webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/cm
+  973  ll
+  974  ll export/
+  975  cd  export/
+  976  ll
+  977  ll monexp
+  978  cd monexp
+  979  ll
+  980  ll root
+  981  ll root_content/
+  982  cd root_content/WFC/
+  983  ll
+  984  cd Repository/
+  985  ll
+  986  cd ANLC/
+  987  ll
+  988  cd PROJETS/
+  989  ll
+  990  cat gantt_final.fex
+  991  exit
+  992  ls
+  993  history 
+  994  cd /var/snap/microk8s/common/default-storage/webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/
+  995  ls
+  996  ls config/
+  997  cd ..
+  998  ls
+  999  find . -f server.xml
+ 1000  find . -name server.xml
+ 1001  sudo find . -name server.xml
+ 1002  sudo su
+ 1003  ls webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/
+ 1004  ls webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/client/
+ 1005  ls webfocus-wf-config-pvc-93e87803-7614-4e75-bbe4-d563f862961f/config/
+ 1006  sudo find . -name server
+ 1007  ls /webfocus-data-solr-2-pvc-581bc447-78f3-445b-b13b-ab530bf37fe9/server
+ 1008  ls
+ 1009  ls ./webfocus-data-solr-2-pvc-581bc447-78f3-445b-b13b-ab530bf37fe9/server
+ 1010  ls ./webfocus-data-solr-2-pvc-581bc447-78f3-445b-b13b-ab530bf37fe9/server/solr/
+ 1011  ls ./webfocus-data-solr-2-pvc-581bc447-78f3-445b-b13b-ab530bf37fe9/server/solr/configsets/
+ 1012  sudo find . -name tomcat
+ 1013  history 
+ 1014  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1015  systemctl reload apache2
+ 1016  history 
+ 1017  cd /var/snap/microk8s/common/default-storage/
+ 1018  ls
+ 1019  sudo find . -name server.xml
+ 1020  sudo find / -name server.xml
+ 1021  sudo find / -name ngnix
+ 1022  sudo find / -name ngni*
+ 1023  cd 
+ 1024  ls
+ 1025  hsi
+ 1026  history 
+ 1027  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1028  sudo systemctl restart apache2
+ 1029  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1030  systemctl reload apache2
+ 1031  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1032  systemctl reload apache2
+ 1033  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1034  susdo systemctl reload apache2
+ 1035  sudo systemctl reload apache2
+ 1036  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1037  sudo systemctl reload apache2
+ 1038  history 
+ 1039  cat  ~/.kube/config
+ 1040  history 
+ 1041  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1042  history 
+ 1043  exit
+ 1044  history 
+ 1045  sudo apt update
+ 1046  ls
+ 1047  history 
+ 1048  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1049  sudo apache2ctl configtest
+ 1050  systemctl reload apache2
+ 1051  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1052  sudo systemctl reload apache2
+ 1053  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1054  sudo systemctl reload apache2
+ 1055  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1056  sudo systemctl reload apache2
+ 1057  sudo apache2ctl configtest
+ 1058  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1059  sudo apache2ctl configtest
+ 1060  sudo systemctl reload apache2
+ 1061  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1062  sudo apache2ctl configtest
+ 1063  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1064  sudo apache2ctl configtest
+ 1065  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1066  sudo systemctl reload apache2
+ 1067  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1068  sudo systemctl reload apache2
+ 1069  ls
+ 1070  cd wildcardssl/
+ 1071  ls
+ 1072  ls /etc/ssl/certs/java/cacerts
+ 1073  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1074  ls
+ 1075  nano ibiwildcard_2020.pfx 
+ 1076  nano IBCERTA.crt 
+ 1077  java -version
+ 1078  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1079  sudo apache2ctl configtest
+ 1080  sudo systemctl reload apache2
+ 1081  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1082  sudo apache2ctl configtest
+ 1083  sudo systemctl reload apache2
+ 1084  sudo apache2ctl configtest
+ 1085  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1086  sudo apache2ctl configtest
+ 1087  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1088  sudo apache2ctl configtest
+ 1089  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1090  sudo apache2ctl configtest
+ 1091  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1092  sudo apache2ctl configtest
+ 1093  sudo a2enmod proxy_wstunnel
+ 1094  systemctl restart apache2
+ 1095  sudo systemctl restart apache2
+ 1096  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1097  history 
+ 1098  kubectl -version
+ 1099  kubectl -v
+ 1100  kubectl --v
+ 1101  history 
+ 1102  ll
+ 1103  ll w*
+ 1104  ll T*
+ 1105  ll wfs
+ 1106  pwd
+ 1107  ll
+ 1108  cd TIB_wfce_1.1.1
+ 1109  ll
+ 1110  ll scripts/
+ 1111  ll scripts/charts/
+ 1112  ll scripts/charts/edaserver/
+ 1113  cat scripts/charts/edaserver/Chart.yaml 
+ 1114  cat scripts/charts/edaserver/values.yaml 
+ 1115  cd
+ 1116  ll
+ 1117  cd IBI_wfce_1.2.1
+ 1118  ll
+ 1119  cd scripts/
+ 1120  ll
+ 1121  ll charts/
+ 1122  ll charts/edaserver/
+ 1123  cat charts/edaserver/values.yaml 
+ 1124  cd
+ 1125  cd IBI_wfce_1.2.1
+ 1126  ll
+ 1127  ll scripts/
+ 1128  ll scripts/helmfile/
+ 1129  cat scripts/helmfile/helmfile.yaml 
+ 1130  kubectl get nodes -o wide
+ 1131  kubectl version
+ 1132  kubectl get sc
+ 1133  kubectl config get-contexts
+ 1134  helm version
+ 1135  helm list
+ 1136  POD_NAME=$(kubectl get pods -l app.kubernetes.io/name=ingress-nginx -o jsonpath='{.items[0].metadata.name}')
+ 1137  kubectl exec -it ikawarinode -- /nginx-ingress-controller --version
+ 1138  kubectl exec -it  microk8s -- /nginx-ingress-controller --version
+ 1139  kubectl -n webfocus get hpa
+ 1140  kubectl get pods -n webfocus
+ 1141  kubectl exec -it edaserver -- /nginx-ingress-controller --version
+ 1142  kubectl exec -it edaserver-0 -- /nginx-ingress-controller --version
+ 1143  kubectl exec -it webfocus -- /nginx-ingress-controller --version
+ 1144  kubectl exec -it edaserver-0 -- /nginx-ingress-controller --version
+ 1145  history 
+ 1146  kubectl get services --all-namespaces
+ 1147  history 
+ 1148  sudo su -
+ 1149  ls
+ 1150  docker ps
+ 1151  netstat -tlnp
+ 1152  history 
+ 1153  netstat -tlnp
+ 1154  history 
+ 1155  kubectl -n docker-registry get services
+ 1156  kubectl -n container-registry get service
+ 1157  helm repos
+ 1158  helm list -A
+ 1159  history 
+ 1160  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1161  history 
+ 1162  netstat -tlnp
+ 1163  ls
+ 1164  cd IBI_wfce_1.2.1/scripts/helmfile/environments/
+ 1165  ls
+ 1166  vi cloud-wf.integ.yaml.gotmpl 
+ 1167  vi dev-wf.integ.yaml.gotmpl 
+ 1168  vi oc-wf.integ.yaml.gotmpl 
+ 1169  kubectl get all --all-namespaces
+ 1170  ls
+ 1171  history 
+ 1172  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1173  systemctl restart apache2
+ 1174  sudo systemctl restart apache2
+ 1175  sudo systemctl status apache2
+ 1176  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1177  sudo systemctl restart apache2
+ 1178  sudo nano /etc/apache2/sites-available/anlc.infobuild-sa.com-le-ssl.conf
+ 1179  sudo systemctl restart apache2
+ 1180  history 
+ 1181  exit
+ 1182  kubectl get sc
+ 1183  kubectl get all --all-namespaces
+ 1184  kubectl delete pod delete-ibi-protected-configset-btsg5
+ 1185  kubectl delete pod delete-ibi-protected-configset-btsg5 -n webfocus
+ 1186  docker ps
+ 1187  docker container ls -a
+ 1188  docker image ls
+ 1189  ls
+ 1190  mkdir pgsql_kube
+ 1191  cd pgsql_kube/
+ 1192  vi postgres-secret.yaml
+ 1193  vi postgres-secret.yaml
+ 1194  kubectl apply -f postgres-secret.yaml 
+ 1195  vi postgres-configmap.yaml
+ 1196  kubectl apply -f postgres-configmap.yaml 
+ 1197  vi postgres-deploy.yaml
+ 1198  kubectl delete -f postgres-secret.yaml 
+ 1199  kubectl create -f postgres-secret.yaml -n postgres --create-namespace
+ 1200  kubectl create namespace postgres
+ 1201  kubectl create -f postgres-secret.yaml -n postgres
+ 1202  ls
+ 1203  kubectl delete -f postgres-configmap.yaml 
+ 1204  kubectl create -n postgres -f postgres-configmap.yaml 
+ 1205  kubectl apply -n postgres -f postgres-deploy.yaml 
+ 1206  vi postgres-deploy.yaml 
+ 1207  kubectl apply -n postgres -f postgres-deploy.yaml 
+ 1208  vi postgres-deploy.yaml 
+ 1209  kubectl get all -n postgres
+ 1210  kubectl apply -f postgres-deploy.yaml 
+ 1211  kubectl apply -f postgres-secret.yaml 
+ 1212  kubectl apply -f postgres-configmap.yaml 
+ 1213  kubectl apply -f postgres-deploy.yaml -n postgres
+ 1214  kubectl apply -f postgres-deploy.yaml
+ 1215  vi postgres-deploy.yaml 
+ 1216  rm postgres-deploy.yaml 
+ 1217  vi postgres-deploy.yaml
+ 1218  kubectl apply -f postgres-deploy.yaml
+ 1219  vi postgres-deploy.yaml 
+ 1220  mv postgres-deploy.yaml postgres-deploy-volume.yaml 
+ 1221  vi postgres-deploy-deployment.yaml
+ 1222  rm postgres-deploy-deployment.yaml 
+ 1223  vi postgres-deploy-deployment.yaml
+ 1224  kubectl apply -f postgres-deploy-deployment.yaml -n postgres
+ 1225  vi postgres-deploy-deployment.yaml
+ 1226  kubectl apply -f postgres-deploy-deployment.yaml -n postgres
+ 1227  kubectl get all --all-namesapces
+ 1228  kubectl get all --all-namespaces
+ 1229  kubectl get all -n postgres
+ 1230  kubectl get all -n postgres
+ 1231  kubectl get pv
+ 1232  cd pgsql_kube/
+ 1233  ls
+ 1234  vi postgres-deploy-volume.yaml 
+ 1235  kubectl get sc
+ 1236  vi postgres-deploy-volume.yaml 
+ 1237  kubectl delete -f postgres-deploy-volume.yaml 
+ 1238  vi  postgres-deploy-volume.yaml 
+ 1239  kubectl apply -f postgres-deploy-volume.yaml -n postgres
+ 1240  kubectl apply -f postgres-deploy-volume.yaml
+ 1241  kubectl get pvc
+ 1242  kubectl get pv
+ 1243  kubectl get all --all-namespaces
+ 1244  kubectl get all -n postgres
+ 1245  kubectl logs postgres-644f577f84-zlqnt -n postgres
+ 1246  vi postgres-deploy-service.yaml
+ 1247  kubectl apply -f postgres-deploy-service.yaml -n postgres
+ 1248  vi postgres-deploy-service.yaml
+ 1249  kubectl apply -f postgres-deploy-service.yaml -n postgres
+ 1250  kubectl get all -n postgres
+ 1251  kubectl logs postgres-644f577f84-zlqnt -n postgres
+ 1252  ping 192.168.1.8
+ 1253  cd pgsql_kube/
+ 1254  ls
+ 1255  vi postgres-deploy-deployment.yaml 
+ 1256  vi postgres-deploy-volume.yaml 
+ 1257  vi postgres-deploy-service.yaml 
+ 1258  history 
+ 1259  ls
+ 1260  vi postgres-secret.yaml 
+ 1261  vi postgres-configmap.yaml 
+ 1262  vi postgres-deploy-deployment.yaml 
+ 1263  history 
+ 1264  ls
+ 1265  vi ingress_ssl_webfocus.yaml
+ 1266  netstat -tlnp
+ 1267  systemctl status apache2
+ 1268  sudo systemctl stop apache2
+ 1269  sudo systemctl disable apache2
+ 1270  microk8s kubectl get pods -A | grep ingress
+ 1271  microk8s enable ingress
+ 1272  microk8s kubectl get pods -A | grep ingress
+ 1273  watch microk8s kubectl get pods -A | grep ingress
+ 1274  kubectl get all --all-namespaces
+ 1275  nslookup anlc.infobuild-sa.com
+ 1276  ping anlc.infobuild-sa.com
+ 1277  nslookup 8.8.8.8
+ 1278  nslookup anlc.infobuild-sa.com
+ 1279  vi letsencryp-microk8s.yaml
+ 1280  kubectl apply -f letsencryp-microk8s.yaml 
+ 1281  microk8s enable cert-manager ingress dns
+ 1282  kubectl apply -f letsencryp-microk8s.yaml 
+ 1283  kubectl get all -all-namespaces
+ 1284  kubectl get all --all-namespaces
+ 1285  kubectl apply -f ingress_ssl_webfocus.yaml 
+ 1286  free
+ 1287  shutdown -h 0
+ 1288  sudo shutdown -h 0
+ 1289  curl 154.68.23.241:54476
+ 1290  curl 154.68.23.242:54476
+ 1291  history 
+ 1292  nano ingress_ssl_webfocus.yaml 
+ 1293  history 
+ 1294  ip a
+ 1295  ls
+ 1296  vi ingress_ssl_webfocus.yaml 
+ 1297  vi ingress_registry.yaml
+ 1298  nslookup serveur2.infobuild-fsa.com
+ 1299  nslookup serveur1.infobuild-fsa.com
+ 1300  nslookup demo.infobuild-fsa.com
+ 1301  nslookup demo1.infobuild-fsa.com
+ 1302  nslookup serveur3.infobuild-fsa.com
+ 1303  nslookup demo.infobuild-sa.com
+ 1304  nslookup serveur1.infobuild-sa.com
+ 1305  nslookup serveur2.infobuild-sa.com
+ 1306  nslookup serveur3.infobuild-sa.com
+ 1307  nslookup demo1.infobuild-sa.com
+ 1308  nslookup serveur.infobuild-sa.com
+ 1309  nslookup serveur1.infobuild-fsa.com
+ 1310  nslookup serveur2.infobuild-fsa.com
+ 1311  nslookup serveur3.infobuild-fsa.com
+ 1312  nslookup registry.ikawaari.com
+ 1313  ls
+ 1314  vi ingress_registry.yaml 
+ 1315  kubectl apply -f ingressroute.yaml
+ 1316  kubectl get all -n docker-regitry
+ 1317  kubectl get all -n docker-registry
+ 1318  kubectl get all -all-namespaces
+ 1319  kubectl get all --all-namespaces
+ 1320  vi ingress_registry.yaml 
+ 1321  kubectl apply -f ingress_registry.yaml 
+ 1322  vi ingress_registry.yaml 
+ 1323  kubectl apply -f ingress_registry.yaml 
+ 1324  kubectl delete -f ingress_registry.yaml 
+ 1325  vi ingress_registry.yaml 
+ 1326  vi ingress_ssl_webfocus.yaml 
+ 1327  kubectl apply -f ingress_registry.yaml 
+ 1328  vi ingress_ssl_webfocus.yaml 
+ 1329  vi ingress_registry.yaml 
+ 1330  kubectl delete -f ingress_registry.yaml 
+ 1331  vi ingress_ssl_webfocus.yaml 
+ 1332  vi ingress_registry.yaml 
+ 1333  kubectl apply -f ingress_registry.yaml 
+ 1334  history 
+ 1335  sudo passwd beye
+ 1336  exit
+ 1337  sudo apt update
+ 1338  htop
+ 1339  netstat -tlnp
+ 1340  docker ps
+ 1341  docker stop 85d75e1269bb
+ 1342  netstat 
+ 1343  netstat -tlnp
+ 1344  history 
+ 1345  microk8s status
+ 1346  kubectl get all --all-namespaces
+ 1347  exit
+ 1348  history 
+ 1349  netstat -tlnp
+ 1350  kubectl get all --all-namespaces
+ 1351  vi ingress_ssl_webfocus.yaml
+ 1352  history 
