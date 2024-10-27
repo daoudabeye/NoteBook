@@ -1,0 +1,1000 @@
+244  docker tag 00f5ee0f2a07 localhost:32000/spark:registry
+  245  sudo docker tag 00f5ee0f2a07 localhost:32000/spark:registry
+  246  sudo docker images
+  247  docker remove repsitory localhost:32000/spark 
+  248  sudo docker remove repsitory localhost:32000/spark 
+  249  sudo docker remove image localhost:32000/spark
+  250  sudo docker image rm localhost:32000/spark
+  251  sudo docker image rm localhost:32000/spark:registry
+  252  docker images
+  253  sudo docker images
+  254  history 
+  255  ls 
+  256  vi docker-postgres
+  257  mkdir docker-postgres
+  258  cd docker-postgres/
+  259  vi docker-compose.yml
+  260  sudo docker compose up -d
+  261  vi docker-compose.yml 
+  262  sudo docker compose up -d
+  263  vi docker-compose.yml 
+  264  sudo docker compose up -d
+  265  vi docker-compose.yml 
+  266  sudo docker compose up -d
+  267  sudo docker ps
+  268  netstat -tlnps
+  269  netstat -tlnp
+  270  vi docker-compose.yml 
+  271  ls
+  272  mkdir workspaces
+  273  git clone https://ci.linagora.com/linagora/lgs/smartsla/smartsla-backend.git
+  274  ls
+  275  cd hadoop-sandbox/
+  276  ls
+  277  history 
+  278  kubectl create namespace nextcloud
+  279  helm repo add nextcloud https://nextcloud.github.io/helm/
+  280  sudo microk8s helm repo add nextcloud https://nextcloud.github.io/helm/
+  281  sudo microk8s helm repo update
+  282  ls
+  283  vi nextcloud-values.yaml
+  284  sudo microk8s helm install nextcloud nextcloud/nextcloud -n nextcloud -f nextcloud-values.yaml
+  285  sudo microk8s kubectl get pods -n nextcloud
+  286  sudo watch microk8s kubectl get pods -n nextcloud
+  287  vi nextcloud-values.yaml 
+  288  minikube kubectl get pods
+  289  history 
+  290  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+  291  ls
+  292  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+  293  rm kubectl 
+  294  ls
+  295  netstat -tlnp
+  296  kubectl get all --all-namespaces
+  297  ip a
+  298  history 
+  299  kubectl port-forward service/openmetadata -n openmetadata 8585:http --address='0.0.0.0'
+  300  kubectl port-forward service/openmetadata -n openmetadata 8080:http --address='0.0.0.0'
+  301  kubectl port-forward service/openmetadata-dependencies-web -n openmetadata 8080:http --address='0.0.0.0'
+  302  kubectl port-forward service/openmetadata-dependencies-web -n openmetadata 8080:8080 --address='0.0.0.0'
+  303  ls ~/.kube/
+  304  vi ~/.kube/config 
+  305  exit
+  306  ls
+  307  cd workspaces/
+  308  ls
+  309  sudo apt install unzip
+  310  mkdir infixedu
+  311  mv infixedu-v8.2.0.zip infixedu
+  312  cd infixedu/
+  313  ls
+  314  unzip infixedu-v8.2.0.zip 
+  315  ls
+  316  sudo apt install php libapache2-mod-php
+  317  sudo apt install php-cli php-cgi php-mysql php-pgsql 
+  318  sudo systemctl restart apache2.service 
+  319  curl -sS https://getcomposer.org/installer | php
+  320  history 
+  321  sudo install -o root -g root -m 0755 composer.phar /usr/local/bin/composer
+  322  composer -version
+  323  composer --version
+  324  ls
+  325  php artisan serve
+  326  sudo apt install php-mbstring php-xml php-bcmath
+  327  composer install
+  328  sudo apt install php-curl
+  329  sudo apt install php-bigbluebutton-api-php
+  330  sudo apt install bigbluebutton-api-php
+  331  composer install
+  332  sudo apt install phpspreadsheet
+  333  sudo apt install php-phpspreadsheet
+  334  composer require phpoffice/phpspreadsheet
+  335  php -v
+  336  composer upgrade
+  337  ls
+  338  composer update
+  339  sudo apt-get install php-zip
+  340  composer update
+  341  apt-get install php-gd
+  342  sudo apt-get install php-gd
+  343  vi /etc/php/8.3/apache2/php.ini 
+  344  sudo find /etc/php/ -name php.ini
+  345  vi /etc/php/8.3/cli/php.ini
+  346  sudo vi /etc/php/8.3/cli/php.ini
+  347  ls
+  348  cd ..
+  349  ls
+  350  mkdir mysql
+  351  cd mysql/
+  352  vi docker-compose.yml
+  353  docker compose up -d
+  354  sudo docker compose up -d
+  355  docker ps
+  356  sudo docker ps
+  357  vi docker-compose.yml 
+  358  netstat -tlnp
+  359  vi docker-compose.yml 
+  360  docker ps
+  361  sudo docker ps
+  362  sudo groupadd docker
+  363  sudo usermod -aG docker $USER
+  364  exit
+  365  php artisan serve --port=9000
+  366  php -S 127.0.0.2:8000 -t public/
+  367  sudo docker build -t test-laravel:latest .
+  368  docker ps
+  369  ls ~/.docker/
+  370  sudo ls ~/.docker/
+  371  sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+  372  history 
+  373  exit
+  374  docker ps
+  375  newgrp docker
+  376  exit
+  377  netstat -tlnp
+  378  docker ps
+  379  docker ps -a
+  380  docker start 3489c4b7510d
+  381  docker logs 3489c4b7510d
+  382  netstat -tlnp
+  383  docker ps
+  384  ls
+  385  vi docker-postgres/docker-compose.yml 
+  386  ls
+  387  vi docker-postgres/docker-compose.yml 
+  388  netstat -tlnp
+  389  ip a
+  390  sudo shutdown -r 0
+  391  free
+  392  htop
+  393  htop 
+  394  free
+  395  htop 
+  396  docker ps
+  397  netstat -tlnp
+  398  docker ps -a
+  399  docker start 3489c4b7510d
+  400  wget https://archive6zg5vrdwm4ljllgxleekeoj43lqayscd4d4kmhnyblq4h3ead.onion/download/github.com-abpframework-abp_-_2022-12-20_14-07-51/abpframework-abp_-_2022-12-20_14-07-51.bundle
+  401  ls
+  402  cd workspaces/
+  403  ls
+  404  mkdir abp
+  405  mv abpframework-abp_-_2022-12-20_14-07-51.bundle abp
+  406  cd abp/
+  407  git clone abpframework-abp_-_2022-12-20_14-07-51.bundle
+  408  ls
+  409  cd abpframework-abp_-_2022-12-20_14-07-51/
+  410  ls
+  411  ls modules/
+  412  ls modules/account/
+  413  ls
+  414  ls abp_io/
+  415  ls source-code/
+  416  ls
+  417  ls build/
+  418  ls framework/
+  419  ls tools/
+  420  ls studio/
+  421  ls
+  422  netstat -tlnp
+  423  docker ps
+  424  docker ps -a
+  425  docker start
+  426  docker start 3489c4b7510d
+  427  docker ps
+  428  docker ps -a
+  429  docker start 3489c4b7510d
+  430  ls
+  431  docker ps -a
+  432  docker start 3489c4b7510d
+  433  ip a
+  434  ping 192.168.1.106
+  435  ping 192.168.1.105
+  436  history 
+  437  php -S 127.0.0.2:8000 -t public/
+  438  php -S 127.0.0.2:8000 -t .
+  439  php artisan serve --host=0.0.0.0 --port=8000 
+  440  php artisan serve --host=0.0.0.0 --port=8000 -t public/
+  441  ls
+  442  cd workspaces/
+  443  ls
+  444  docker ps -a
+  445  docker start cb4757984e99
+  446  history 
+  447  ls
+  448  ls mysql/
+  449  vi mysql/docker-compose.yml 
+  450  ls
+  451  cd infixedu/
+  452  ls
+  453  docker build -t infiedux .
+  454  docker images
+  455  docker run -p 8000:8000 infiedux
+  456  docker ps -a
+  457  docker rm 22e95f9c479d
+  458  docker image rm infixedu
+  459  docke images
+  460  docke images ls
+  461  docker images ls
+  462  docker images
+  463  docker image rm infiedux
+  464  vi Dockerfile 
+  465  docker build -t infiedux .
+  466  docker images
+  467  docker run -n infiedux -p 8000:8000 infiedux
+  468  docker run -name infiedux -p 8000:8000 infiedux
+  469  docker run --name infiedux -p 8000:8000 infiedux
+  470  docker container rm infiedux
+  471  docker image rm infiedux
+  472  docker build -t infiedux .
+  473  docker run --name infiedux -p 8000:8000 infiedux
+  474  docker container rm infiedux
+  475  docker image rm infiedux
+  476  find . -name logo.png
+  477  docker images
+  478  docker build -t infiedux .
+  479  docker run --name infiedux -p 8000:8000 -d infiedux
+  480  docker ps
+  481  docker ps -a
+  482  cb4757984e99
+  483  docker ps
+  484  docker ps -a
+  485  docker start 3489c4b7510d
+  486  docker ps
+  487  export MOODLE_DOCKER_WWWROOT=./moodle
+  488  export MOODLE_DOCKER_DB=pgsql
+  489  git clone -b MOODLE_403_STABLE git://git.moodle.org/moodle.git $MOODLE_DOCKER_WWWROOT
+  490  cd ./moodle/
+  491  ls
+  492  rm *
+  493  rm -rf *
+  494  cd
+  495  git clone -b MOODLE_404_STABLE git://git.moodle.org/moodle.git $MOODLE_DOCKER_WWWROOT
+  496  cd ./moodle/
+  497  ls
+  498  git clone -b MOODLE_404_STABLE git://git.moodle.org/moodle.git $MOODLE_DOCKER_WWWROOT
+  499  ls
+  500  rm -rf moodle/
+  501  cd
+  502  ls ./moodle/
+  503  git clone -b MOODLE_404_STABLE git://git.moodle.org/moodle.git $MOODLE_DOCKER_WWWROOT
+  504  rmdir ./moodle/
+  505  rm -rf ./moodle/
+  506  git clone -b MOODLE_404_STABLE git://git.moodle.org/moodle.git $MOODLE_DOCKER_WWWROOT
+  507  cd ./moodle/
+  508  cp config.docker-template.php $MOODLE_DOCKER_WWWROOT/config.php
+  509  ls
+  510  cd ..
+  511  mkdir moodle-docker
+  512  cd ./moodle
+  513  pwd
+  514  ls
+  515  export MOODLE_DOCKER_WWWROOT=export MOODLE_DOCKER_WWWROOT=
+  516  cd ..
+  517  cd moodle-docker/
+  518  cp config.docker-template.php $MOODLE_DOCKER_WWWROOT/config.php
+  519  ls
+  520  git clone https://github.com/moodlehq/moodle-docker.git
+  521  ls
+  522  cd moodle-docker/
+  523  cp config.docker-template.php $MOODLE_DOCKER_WWWROOT/config.php
+  524  sudo cp config.docker-template.php $MOODLE_DOCKER_WWWROOT/config.php
+  525  ls $MOODLE_DOCKER_WWWROOT
+  526  cd $MOODLE_DOCKER_WWWROOT
+  527  ls
+  528  echo $MOODLE_DOCKER_WWWROOT
+  529  export MOODLE_DOCKER_WWWROOT=/home/beye/moodle
+  530  echo $MOODLE_DOCKER_WWWROOT
+  531  echo $MOODLE_DOCKER_DB
+  532  cd moodle-docker/
+  533  cp config.docker-template.php $MOODLE_DOCKER_WWWROOT/config.php
+  534  cd moodle-docker/
+  535  cp config.docker-template.php $MOODLE_DOCKER_WWWROOT/config.php
+  536  ls $MOODLE_DOCKER_WWWROOT
+  537  bin/moodle-docker-compose up -d
+  538  docker ps -aa
+  539  ls
+  540  ls bin/
+  541  vi bin/moodle-docker-compose
+  542  bin/moodle-docker-compose stop
+  543  docker container prune
+  544  docker container ls -a
+  545  docker volume ls
+  546  docker volume prune
+  547  netstat -tlnp
+  548  expot MOODLE_DOCKER_WEB_PORT=0.0.0.0:8001
+  549  export MOODLE_DOCKER_WEB_PORT=0.0.0.0:8001
+  550  echo $MOODLE_DOCKER_WEB_PORT
+  551  bin/moodle-docker-compose up -d
+  552  netstat -tlnp
+  553  docker ps
+  554  docker logs --follow 2b6875a3aa6a
+  555  bin/moodle-docker-compose stop
+  556  bin/moodle-docker-compose up -d
+  557  vi bin/moodle-docker-compose
+  558  bin/moodle-docker-compose stop
+  559  ip a
+  560  export $MOODLE_DOCKER_WEB_HOST=154.68.23.243
+  561  export MOODLE_DOCKER_WEB_HOST=154.68.23.243
+  562  echo $MOODLE_DOCKER_WEB_HOST
+  563  bin/moodle-docker-compose up -d
+  564  docker ps
+  565  docker ps -a
+  566  history 
+  567  docker run -n infiedux -p 8000:8000 infiedux
+  568  docker run -name infiedux -p 8000:8000 infiedux
+  569  docker run --name infiedux -p 8000:8000 infiedux
+  570  docker run --name infiedux -p 8000:8000 -d infiedux
+  571  docker ps
+  572  docker ps -a
+  573  docker start 014c88bd733c
+  574  docker exec -it 014c88bd733c /bin/bash
+  575  docker ps
+  576  cd
+  577  ls
+  578  ls workspaces/
+  579  cd workspaces/
+  580  ls
+  581  cd infixedu/
+  582  ls
+  583  vi Dockerfile 
+  584  docker exec -it 014c88bd733c /bin/bash
+  585  ls
+  586  vi Dockerfile 
+  587  history 
+  588  docker ps
+  589  docker exec -it 014c88bd733c /bin/bash
+  590  docker stop 014c88bd733c
+  591  docker rm 014c88bd733c
+  592  ls /usr/local/etc/
+  593  find / -name php.ini
+  594  vi /etc/php/8.3/cli/php.ini 
+  595  docker run --name infiedux -p 8000:8000 -e PHP_UPLOAD_MAX_FILESIZE=64M -e PHP_POST_MAX_SIZE=64M infiedux
+  596  docker ps
+  597  docker ps -a
+  598  docker start 77091af2d17d
+  599  docker ps
+  600  docker stop 77091af2d17d
+  601  docker run --name infiedux -p 8000:8000 -e PHP_UPLOAD_MAX_FILESIZE=64M -e PHP_POST_MAX_SIZE=64M -d infiedux
+  602  docker rm 77091af2d17d
+  603  docker run --name infiedux -p 8000:8000 -e PHP_UPLOAD_MAX_FILESIZE=64M -e PHP_POST_MAX_SIZE=64M -d infiedux
+  604  docker ps
+  605  docker stop09cc6d1ca607
+  606  docker stop 09cc6d1ca607
+  607  sudo apt update
+  608  sudo apt upgrade
+  609  doker ps -a
+  610  docker ps -a
+  611  docker start d69b10c8591a
+  612  docker start ef1205470989
+  613  docker ps -a
+  614  docker start 09cc6d1ca607
+  615  docker ps -a
+  616  docker start 3489c4b7510d
+  617  docker ps
+  618  docker start cb4757984e99
+  619  docker ps -a
+  620  docker start 63e0ce37fb76
+  621  docker start e76d2e96c552
+  622  history | grep php
+  623  php artisan serve --host=0.0.0.0 --port=8000 -t public/
+  624  php artisan serve --host=0.0.0.0 --port=8000
+  625  php -S 127.0.0.2:8000 -t public/
+  626  php -S 0.0.0.0:8000 -t .
+  627  docker ps 
+  628  docker stop 06977c0e66ab
+  629  docker rm 06977c0e66ab
+  630  docker images
+  631  docker image rm infiedux
+  632  cd workspaces/infixedu/
+  633  docker build -t infiedux .
+  634  docker ps
+  635  cd ..
+  636  vi mysql/docker-compose.yml 
+  637  docker run --name infiedux -p 8000:8000 -v /home/beye/workspaces/infixedu/upload.ini:/usr/local/etc/php/conf.d/upload.ini -d infiedux
+  638  docker ps
+  639  docker logs --follow 224e4e00330a
+  640  docker stop 224e4e00330a
+  641  netstat -tlnp
+  642  docker start 224e4e00330a
+  643  docker logs --follow 224e4e00330a
+  644  docker exec -it 224e4e00330a /bin/bash
+  645  docker stop 224e4e00330a
+  646  docker start 224e4e00330a
+  647  docker logs --follow 224e4e00330a
+  648  docker exec -it 224e4e00330a /bin/bash
+  649  docker stop 224e4e00330a
+  650  docker start 224e4e00330a
+  651  docker stop 224e4e00330a
+  652  docker rm 224e4e00330a
+  653  docker images
+  654  docke image rm infiedux
+  655  docke images rm infiedux
+  656  docker images rm infiedux
+  657  docker image rm infiedux
+  658  cd infixedu/
+  659  docker build -t infiedux .
+  660  docker run --name infiedux -p 8000:8000 -v /home/beye/workspaces/infixedu/upload.ini:/usr/local/etc/php/conf.d/upload.ini -d infiedux
+  661  exit
+  662  docker ps
+  663  docker ps -a
+  664  docker start
+  665  docker start 09cc6d1ca607
+  666  docker exec -it 09cc6d1ca607 /bin/bash
+  667  netstat -tlnp
+  668  docker stop 09cc6d1ca607
+  669  netstat -tlnp
+  670  ip a
+  671  history 
+  672  cd workspaces/infixedu/
+  673  ls
+  674  docker rm 09cc6d1ca607
+  675  pwd
+  676  docker run --name infiedux -p 8000:8000 -v /home/beye/workspaces/infixedu/upload.ini:/usr/local/etc/php/conf.d/upload.ini -d infiedux
+  677  docker ps
+  678  docker logs --follow 06977c0e66a
+  679  history | grep mysql
+  680  vi mysql/docker-compose.yml
+  681  cd
+  682  vi mysql/docker-compose.yml
+  683  ls
+  684  cd workspaces/
+  685  ls
+  686  ms mysql/
+  687  ls mysql/
+  688  vi mysql/docker-compose.yml
+  689  docker volume
+  690  docker volumes
+  691  docker volume ls
+  692  docker ps -&
+  693  docker ps -a
+  694  docker start d69b10c8591a
+  695  docker ps -a
+  696  docker stop d69b10c8591a
+  697  docker start 3489c4b7510d
+  698  ip -a
+  699  ip
+  700  ifconfig
+  701  netstat -tlnp
+  702  htop
+  703  sudo shutdown -h 0
+  704  htop
+  705  netstat -tlnp
+  706  netstat -tlnp
+  707  docker exec -it dq-dqs /bin/bash
+  708  docker ps
+  709  ls
+  710  ls ibi/
+  711  cd ibi/
+  712  ls
+  713  cd ibi_dq/
+  714  ls
+  715  cd workspaces/
+  716  unzip ibi_tdq_5.2.0_container.zip 
+  717  ls
+  718  mv install ibi_dq
+  719  cd ibi_dq/
+  720  ls
+  721  vi docker-compose.yaml 
+  722  ls
+  723  vi .env 
+  724  ls
+  725  cd
+  726  cd workspaces/
+  727  ls
+  728  cd ibi_dq/
+  729  ls
+  730  docker compose up --build
+  731  cd
+  732  ls
+  733  mkdir ibi
+  734  cd workspaces/
+  735  ls
+  736  mv ibi_dq/ ~/ibi/
+  737  mv ibi_tdq_5.2.0_container.zip ~/ibi/
+  738  cd ~/ibi/
+  739  ls
+  740  ls 
+  741  tar -xvf TIB_dsmlce_1.0.3_linux_x86_64.tar 
+  742  ls
+  743  cd TIB_dsmlce_1.0.3_linux_x86_64/
+  744  ls
+  745  cd dsml-build-context/
+  746  ls
+  747  cd metadata/
+  748  ls
+  749  vi Dockerfile 
+  750  docker build --no-cache -t ibi2020/webfocus:metadata-9.0-1.0.0
+  751  docker build --no-cache -t ibi2020/webfocus:metadata-9.0-1.0.0 .
+  752  cd
+  753  cd ibi/ibi_dq/
+  754  vi .env 
+  755  ls
+  756  docker compose up --build
+  757  docker images
+  758  docker image prune
+  759  docker container ls
+  760  docker container ls -a
+  761  docker start cb4757984e99
+  762  docker start 3489c4b7510d
+  763  docker start infiedux
+  764  docker container prune
+  765  docker container ls -a
+  766  docker image prune
+  767  docker images
+  768  docker image rm 4fe2e9e049dc
+  769  docker image rm ff3791fa44a3
+  770  ls
+  771  docker compose up --build
+  772  ls
+  773  vi docker-compose.yaml 
+  774  docker compose down
+  775  docker images
+  776  docker image rm dq-dq-dqs
+  777  docker compose up --build
+  778  docker compose down
+  779  docker container ls
+  780  docker ls -a
+  781  docker container ls -a
+  782  docker images
+  783  docker image prune
+  784  docker image rm dq-dq-dqs
+  785  docker image rm dq-dq-python-services
+  786  docker image rm dq-dq-nginx 
+  787  docker image rm dq-dq-valet-ui
+  788  docker image rm dq*
+  789  docker image rm dq-dq-valet-services
+  790  docker image rm dq-dq-butler
+  791  docker image rm dq-dq-wso2
+  792  docker image rm dq-dq-grafana
+  793  docker image rm dq-dq-postgres
+  794  docker image rm dq-dq-address-server
+  795  docker image rm dq-dq-profiler
+  796  docker image rm dq-dq-ksource
+  797  docker images
+  798  docker volume prune
+  799  docker volumes
+  800  docker volume ls
+  801  docker volume rm dq_dq-db
+  802  docker volume rm dq_dq-grafana-storage
+  803  docker volume rm dq_dq-logs
+  804  docker volume rm dq_dq-storage
+  805  ls
+  806  docker container ls
+  807  docker container ls -a
+  808  docker logs dq-dq-address-server
+  809  docker logs 065102e0c5e1
+  810  netstat -tlnp
+  811  docker logs 98abf1611cbd
+  812  docker container ls
+  813  docker composer down
+  814  docker compose down
+  815  history 
+  816  docker image rm dq-dq-dqs
+  817  docker image rm dq-dq-python-services
+  818  docker image rm dq-dq-nginx 
+  819  docker image rm dq-dq-valet-ui
+  820  docker image rm dq-dq-valet-services
+  821  docker image rm dq-dq-butler
+  822  docker image rm dq-dq-wso2
+  823  docker image rm dq-dq-grafana
+  824  docker image rm dq-dq-postgres
+  825  docker image rm dq-dq-address-server
+  826  docker image rm dq-dq-profiler
+  827  docker image rm dq-dq-ksource
+  828  docker images
+  829  vi .env 
+  830  docker composer up --build
+  831  docker compose up -d --build
+  832  docker ps
+  833  ls
+  834  docker ps
+  835  cd 
+  836  ls
+  837  cd ibi/
+  838  ls
+  839  wget https://jdbc.postgresql.org/download/postgresql-42.7.3.jar
+  840  ls
+  841  docker cp postgresql-42.7.3.jar tdq-valet-services:/tdq-valet-services/lib/sqljdbc42.jar
+  842  docker ps
+  843  docker cp postgresql-42.7.3.jar dq-dq-valet-services:/tdq-valet-services/lib/sqljdbc42.jar
+  844  docker cp postgresql-42.7.3.jar f39570b947f1:/tdq-valet-services/lib/sqljdbc42.jar
+  845  docker restart f39570b947f1
+  846  docke rps
+  847  docker ps
+  848  docker compose down
+  849  ls
+  850  cd ibi_dq/
+  851  docker compose down
+  852  docker compose up -d
+  853  docker ps
+  854  docker cp postgresql-42.7.3.jar 06d0d153df22:/tdq-valet-services/lib/postgresql-42.7.3.jar
+  855  docker cp ../../postgresql-42.7.3.jar 06d0d153df22:/tdq-valet-services/lib/postgresql-42.7.3.jar
+  856  cd
+  857  ls
+  858  cd ibi/
+  859  ls
+  860  docker cp postgresql-42.7.3.jar 06d0d153df22:/tdq-valet-services/lib/postgresql-42.7.3.jar
+  861  docker stop 06d0d153df22
+  862  docker start 06d0d153df22
+  863  docker restart 25014c938ee2
+  864  docker logs 25014c938ee2
+  865  docker compose down
+  866  ls
+  867  cd ibi_dq/
+  868  ls
+  869  docker compose down
+  870  cp ../postgresql-42.7.3.jar dq-valet-services/dockerRoot/lib/
+  871  ls dq-valet-services/dockerRoot/
+  872  ls -ltrh dq-valet-services/dockerRoot/
+  873  ls -ltrh dq-valet-services/dockerRoot/logback.xml 
+  874  ls -ltrh dq-valet-services/dockerRoot/lib/
+  875  docker image rm dq-dq-dqs
+  876  docker image rm dq-dq-python-services
+  877  docker image rm dq-dq-nginx 
+  878  docker image rm dq-dq-valet-ui
+  879  docker image rm dq-dq-valet-services
+  880  docker image rm dq-dq-butler
+  881  docker image rm dq-dq-wso2
+  882  docker image rm dq-dq-grafana
+  883  docker image rm dq-dq-postgres
+  884  docker image rm dq-dq-address-server
+  885  docker image rm dq-dq-profiler
+  886  docker image rm dq-dq-ksource
+  887  docker images
+  888  docker ps
+  889  pwd
+  890  ls
+  891  docker compose up --build -d
+  892  docker sp
+  893  docker ps
+  894  docker logs --follow --tail 100 e349e9af3b8f
+  895  docker ps
+  896  docker ls dfc5008c68bf:/tdq-valet-services/lib/postgresql-42.7.3.jar
+  897  docker -it exec dfc5008c68bf /bin/bash
+  898  docker it exec dfc5008c68bf /bin/bash
+  899  docker exec -it dfc5008c68bf /bin/bash
+  900  docker exec -it dfc5008c68bf
+  901  docker cp ../postgresql-42.7.3.jar dfc5008c68bf:/tdq-valet-services/lib/postgresql-42.7.3.jar
+  902  htop
+  903  shutdown -h 0
+  904  sudo shutdown -h 0
+  905  ls
+  906  docke rps
+  907  docker ps
+  908  docker ps -a
+  909  docker start 3489c4b7510d
+  910  ls
+  911  cd workspaces/
+  912  ls
+  913  mkdir digitalbank
+  914  cd digitalbank/
+  915  ls
+  916  wget https://github.com/digisic/digitalbank-gen-one.git
+  917  ls
+  918  rm digitalbank-gen-one.git 
+  919  git clone https://github.com/digisic/digitalbank-gen-one.git
+  920  cd digitalbank-gen-one/
+  921  vi deploy/docker-compose/docker-compose-postgres.yml 
+  922  docker ps
+  923  docker compose up -f deploy/docker-compose/docker-compose-h2.yml 
+  924  docker compose -f deploy/docker-compose/docker-compose-h2.yml up
+  925  docker compose -f deploy/docker-compose/docker-compose-h2.yml up -d
+  926  exit
+  927  docker ps
+  928  netstat -tlnp
+  929  exit
+  930  docker ps
+  931  htop
+  932  ls
+  933  cd workspaces/
+  934  ls
+  935  mkdir ikasaas
+  936  cd ikasaas/
+  937  wget https://github.com/daoudabeye/IkawaariSaaS.git
+  938  git clone https://@github.com/daoudabeye/IkawaariSaaS.git
+  939  ls
+  940  cd IkawaariSaaS/
+  941  ls
+  942  vi src/IkawaariSaaS.Web/
+  943  vi src/IkawaariSaaS.Web/Dockerfile
+  944  docker build -t ikawaarisaas -f src/IkawaariSaaS.Web/Dockerfile .
+  945  vi src/IkawaariSaaS.Web/IkawaariSaaS.Web.csproj 
+  946  vi src/IkawaariSaaS.Theme.Dashlite/
+  947  vi src/IkawaariSaaS.Theme.Dashlite/IkawaariSaaS.Theme.Dashlite.csproj 
+  948  docker build -t ikawaarisaas -f src/IkawaariSaaS.Web/Dockerfile .
+  949  git pull
+  950  rm -rf *
+  951  git clone https://@github.com/daoudabeye/IkawaariSaaS.git
+  952  cd ..
+  953  rm -rf ikasaas/
+  954  git clone https://@github.com/daoudabeye/IkawaariSaaS.git
+  955  cd IkawaariSaaS/
+  956  ls
+  957  docker build -t ikawaarisaas -f src/IkawaariSaaS.Web/Dockerfile .
+  958  git pull
+  959  docker build -t ikawaarisaas -f src/IkawaariSaaS.Web/Dockerfile .
+  960  vi src/IkawaariSaaS.Theme.Dashlite/IkawaariSaaS.Theme.Dashlite.csproj 
+  961  docker build -t ikawaarisaas -f src/IkawaariSaaS.Web/Dockerfile .
+  962  dotnet restore
+  963  htop
+  964  docker ps
+  965  ls
+  966  cd workspaces/
+  967  ls
+  968  cd IkawaariSaaS/
+  969  git pull
+  970  vi src/IkawaariSaaS.Theme.Dashlite/IkawaariSaaS.Theme.Dashlite.csproj
+  971  cd ..
+  972  rm -rf IkawaariSaaS/
+  973  git clone https://@github.com/daoudabeye/IkawaariSaaS.git
+  974  cd IkawaariSaaS/
+  975  ls
+  976  sudo apt-get update &&   sudo apt-get install -y dotnet-sdk-8.0
+  977  dotnet -version
+  978  cd ..
+  979  rm -rf IkawaariSaaS/
+  980  git clone https://@github.com/daoudabeye/IkawaariSaaS.git
+  981  cd IkawaariSaaS/src/IkawaariSaaS.Web/bin/Debug/net8.0/
+  982  ls
+  983  git config --list
+  984  git config user.name
+  985  git config --global user.name "Beye"
+  986  git config --global user.email "daouda.beye@gmail.com"
+  987  git push
+  988  cd workspaces/IkawaariSaaS/
+  989  git push
+  990  nslookup dev.ikawaari.com
+  991  nslookup devsrv.ikawaari.com
+  992  sudo apt install certbot python3-certbot-apache
+  993  sudo certbot
+  994  netstat -tlnp
+  995  systemctl status nginx
+  996  systemctl status apache
+  997  docker ps
+  998  kubectl get all --all-namespaces
+  999  microk8s stop
+ 1000  kubectl get all --all-namespaces
+ 1001  netstat -tlnp
+ 1002  sudo certbot certonly --standalone --preferred-challenges http -d devsrv.ikawaari.com
+ 1003  netstat -tlnp
+ 1004  kill -9 80
+ 1005  sudo kill -9 80
+ 1006  netstat -tlnp
+ 1007  systemctl disable microk8s
+ 1008  microk8s.disable
+ 1009  sudo microk8s.disable
+ 1010  netstat -tlnp
+ 1011  docker ps
+ 1012  docker stop microk8s.disable
+ 1013  docker stop 335a397e7c37
+ 1014  cd ../digitalbank/
+ 1015  ls
+ 1016  cd digitalbank-gen-one/deploy/docker-compose/
+ 1017  ls
+ 1018  docker compse down -f docker-compose-h2.yml
+ 1019  docker compose -f docker-compose-h2.yml down
+ 1020  netstat -tlnp
+ 1021  fuser -k 80/tcp
+ 1022  netstat -tlnp
+ 1023  fuser -k 80/tcp6
+ 1024  sudo reboot 
+ 1025  microk8s stop
+ 1026  netstat -tlnp
+ 1027  ls /etc/apache2/
+ 1028  ls /etc/apache2/sites-available/
+ 1029  ls /etc/apache2/sites-enabled/
+ 1030  sudo apt uninstall apache2
+ 1031  sudo apt uninstall apache
+ 1032  sudo apt remove apache
+ 1033  sudo apt remove apache2
+ 1034  netstat -tlnp
+ 1035  sudo certbot certonly --standalone --preferred-challenges http -d devsrv.ikawaari.com
+ 1036  cd /etc/letsencrypt/live/devsrv.ikawaari.com/
+ 1037  ls
+ 1038  sudo /etc/letsencrypt/live/devsrv.ikawaari.com/
+ 1039  sudo cd /etc/letsencrypt/live/devsrv.ikawaari.com/
+ 1040  sudo openssl pkcs12 -export -in /etc/letsencrypt/live/devsrv.ikawaari.com/fullchain.pem -inkey /etc/letsencrypt/live/devsrv.ikawaari.com/privkey.pem -out cert.pkx
+ 1041  ls
+ 1042  sudo openssl pkcs12 -export -in /etc/letsencrypt/live/devsrv.ikawaari.com/fullchain.pem -inkey /etc/letsencrypt/live/devsrv.ikawaari.com/privkey.pem -out cert.pfx
+ 1043  ls
+ 1044  git revers
+ 1045  git revert
+ 1046  git commit
+ 1047  cd workspaces/
+ 1048  rm -rf IkawaariSaaS/
+ 1049  git clone https://@github.com/daoudabeye/IkawaariSaaS.git
+ 1050  sudo openssl pkcs12 -export -in /etc/letsencrypt/live/devsrv.ikawaari.com/fullchain.pem -inkey /etc/letsencrypt/live/devsrv.ikawaari.com/privkey.pem -out ~/https/dev/cert.pfx
+ 1051  mkdir https/dev
+ 1052  mkdir https/dev/
+ 1053  mkdir -p https/dev/
+ 1054  ls  https/dev/
+ 1055  cd  https/dev/
+ 1056  pwd
+ 1057  docker ps
+ 1058  docker ps -a
+ 1059  docker start 3489c4b7510d
+ 1060  cd ..
+ 1061  chmod 755 -R https/
+ 1062  sudo chmod 755 -R https/
+ 1063  ls -ll
+ 1064  dotnet restore
+ 1065  ls
+ 1066  cd workspaces/digitalbank/digitalbank-gen-one/deploy/
+ 1067  ls
+ 1068  cd docker-compose/
+ 1069  ls
+ 1070  docker compose -f docker-compose-h2.yml up
+ 1071  ls
+ 1072  cd workspaces/
+ 1073  mkdir GestionMarchePublic
+ 1074  cd GestionMarchePublic/
+ 1075  cd ..
+ 1076  rm -rf GestionMarchePublic/
+ 1077  git clone --branch master https://@github.com/daoudabeye/GestionMarchePublic.git
+ 1078  ls
+ 1079  cd GestionMarchePublic/
+ 1080  ls
+ 1081  docker build -t GestionMarcherPublic -f GestionMarchePublic/Dockerfile 
+ 1082  docker build -t GestionMarcherPublic -f GestionMarchePublic/Dockerfile . 
+ 1083  docker build -t gestionmarche -f GestionMarchePublic/Dockerfile . 
+ 1084  docker build -t GestionMarcherPublic -f GestionMarchePublic/Dockerfile . 
+ 1085  docker build -t gestionmarche -f GestionMarchePublic/Dockerfile . 
+ 1086  docker build -t GestionMarcherPublic -f GestionMarchePublic/Dockerfile . 
+ 1087  docker build -t gestionmarche -f GestionMarchePublic/Dockerfile . 
+ 1088  docker images
+ 1089  docker run -p 5003:5003 gestionmarche
+ 1090  docker  image rm gestionmarche
+ 1091  docker container ls
+ 1092  docker container ls -a
+ 1093  docker container rm a73e727c2228
+ 1094  docker container rm 4a3c0f0a6852
+ 1095  docker  image rm gestionmarche
+ 1096  docker build -t gestionmarche -f GestionMarchePublic/Dockerfile . 
+ 1097  docker run -p 5003:5003 gestionmarche
+ 1098  docker ps
+ 1099  dotnet run --project GestionMarchePublic
+ 1100  dotnet restore
+ 1101  dotnet add package IkawaariSaaS.Theme.Dashlite.1.0.4.nupkg --project GestionMarchePublic
+ 1102  dotnet run
+ 1103  dotnet run --project GestionMarchePublic
+ 1104  ls
+ 1105  cat migrate-database.ps1 
+ 1106  dotnet run --project GestionMarchePublic --migrate-database
+ 1107  dotnet run --project GestionMarchePublic
+ 1108  ls
+ 1109  cd workspaces/
+ 1110  cd GestionMarchePublic/
+ 1111  ls
+ 1112  vi GestionMarchePublic/Properties/launchSettings.json 
+ 1113  dotnet run --project GestionMarchePublic
+ 1114  dotnet tool install -g Volo.Abp.Studio.Cli
+ 1115  abp install-lib
+ 1116  abp install-libs
+ 1117  sudo apt install node
+ 1118  sudo apt install nodejs
+ 1119  sudo apt install npm
+ 1120  abp install-libs
+ 1121  dotnet run --project GestionMarchePublic
+ 1122  screen
+ 1123  docker ps
+ 1124  docker stop f2b1cba0e3f1
+ 1125  cd workspaces/digitalbank/
+ 1126  cd digitalbank-gen-one/deploy/
+ 1127  docker compose -f docker-compose/docker-compose-h2.yml down
+ 1128  cd
+ 1129  docker ps -a
+ 1130  docker start 3489c4b7510d
+ 1131  screen -r
+ 1132  dotnet restore
+ 1133  docker ps
+ 1134  docker ps -a
+ 1135  docker start 3489c4b7510d
+ 1136  dotnet restore
+ 1137  cd src/IkawaariSaaS.EntityFrameworkCore/
+ 1138  dotnet ef migrations add FaQMigrations
+ 1139  dotnet ef migration add FaQMigrations
+ 1140  dotnet ef migrations add FaQMigrations
+ 1141  dotnet ef migrations Add FaQMigrations
+ 1142  dotnet ef Migrations Add FaQMigrations
+ 1143  git pull
+ 1144  dotnet run
+ 1145  cd src/IkawaariSaaS.Web/
+ 1146  dotnet run
+ 1147  dotnet clean
+ 1148  htop
+ 1149  docker ps
+ 1150  history 
+ 1151  microk8s stop
+ 1152  htop 
+ 1153  sudo shutdown -h 0
+ 1154  abp install-libs
+ 1155  microk8s stop
+ 1156  docker ps -a
+ 1157  docker start 3489c4b7510d
+ 1158  docker stop infiedux5156b8b90ddf
+ 1159  docker ps
+ 1160  docker stop 5156b8b90ddf
+ 1161  htop
+ 1162  sudo apt update
+ 1163  sudo apt upgrade
+ 1164  htop
+ 1165  sudo reboot 
+ 1166  dotnet restore
+ 1167  dotnet run --project Ikasoft.Gsm --migrate-database
+ 1168  dotnet run --project Ikasoft.Gsm.Web --migrate-database
+ 1169  abp install-libs
+ 1170  ls
+ 1171  cd workspaces/
+ 1172  ls
+ 1173  ls IkawaariSaaS/
+ 1174  history 
+ 1175  git clone --branch master https://@github.com/daoudabeye/IkasoftGms.git
+ 1176  ls
+ 1177  cd IkasoftGms/
+ 1178  ls
+ 1179  cd Ikasoft.Gsm.Web/
+ 1180  ls
+ 1181  pwd
+ 1182  cd bin/Debug/net8.0/
+ 1183  ls
+ 1184  cd 
+ 1185  ls
+ 1186  cd workspaces/
+ 1187  ls
+ 1188  mdir sqdb
+ 1189  mkdir sqdb
+ 1190  cd sqdb/
+ 1191  ls
+ 1192  pwd
+ 1193  history 
+ 1194  ls
+ 1195  cd workspaces/
+ 1196  ls
+ 1197  rm -rf IkawaariSaaS/
+ 1198  ls
+ 1199  git clone https://@github.com/daoudabeye/IkawaariSaaS
+ 1200  ls
+ 1201  cd IkawaariSaaS/
+ 1202  ls
+ 1203  history 
+ 1204  ls /home/beye/https/dev/
+ 1205  ls /home/beye/https/dev/cert.pfx 
+ 1206  docker build -t ikawaarisaas -f ./src/IkawaariSaaS.Web/Dockerfile .
+ 1207  docker rum -p 8090:8080 ikawaarisaas
+ 1208  docker images
+ 1209  history 
+ 1210  docker run -p 8090:8080 ikawaarisaas
+ 1211  docker build -t ikawaarisaas -f ./src/IkawaariSaaS.Web/Dockerfile .
+ 1212  docker run -v /home/beye/https/dev/cert.pfx:/https/cert.pfx ikawaarisaas
+ 1213  cd src/IkawaariSaaS.Web/
+ 1214  ls
+ 1215  docker run -v /home/beye/https/dev/cert.pfx:/https/cert.pfx ikawaarisaas
+ 1216  docker build -t ikawaarisaas -f ./src/IkawaariSaaS.Web/Dockerfile .
+ 1217  cd ..
+ 1218  docker build -t ikawaarisaas -f ./src/IkawaariSaaS.Web/Dockerfile .
+ 1219  ls
+ 1220  ls /home/beye/https/dev/
+ 1221  cd /home/beye/https/dev/
+ 1222  ls -ll
+ 1223  sudo chmod 755 openiddict.pfx 
+ 1224  ls -ll
+ 1225  cd 
+ 1226  cd workspaces/IkawaariSaaS/
+ 1227  docker build -t ikawaarisaas -f ./src/IkawaariSaaS.Web/Dockerfile .
+ 1228  ls /home/beye/https/dev/openiddict.pfx
+ 1229  docker build -t ikawaarisaas -f ./src/IkawaariSaaS.Web/Dockerfile .
+ 1230  docker run -v /home/beye/https/dev/cert.pfx:/https/cert.pfx /home/beye/https/dev/openiddict.pfx: -v /app/certs/openiddict.pfx ikawaarisaas
+ 1231  docker build -t ikawaarisaas -f ./src/IkawaariSaaS.Web/Dockerfile .
+ 1232  docker run -v /home/beye/https/dev/cert.pfx:/https/cert.pfx /home/beye/https/dev/openiddict.pfx: -v /app/certs/openiddict.pfx ikawaarisaas
+ 1233  docker run -v /home/beye/https/dev/cert.pfx:/https/cert.pfx -v /home/beye/https/dev/openiddict.pfx:/app/certs/openiddict.pfx ikawaarisaas
+ 1234  cp /home/beye/https/dev/openiddict.pfx ./src/IkawaariSaaS.Web/
+ 1235  docker build -t ikawaarisaas -f ./src/IkawaariSaaS.Web/Dockerfile .
+ 1236  docker run -v /home/beye/https/dev/cert.pfx:/https/cert.pfx ikawaarisaas
+ 1237  docker run -p 8095:8080 -v /home/beye/https/dev/cert.pfx:/https/cert.pfx ikawaarisaas
+ 1238  sudo apt update
+ 1239  sudo apt upgrade
+ 1240  history 
+ 1241  systemctl status microk8s
+ 1242  microk8s status
+ 1243  history
