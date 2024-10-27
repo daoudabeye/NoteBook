@@ -1,0 +1,24 @@
+[Unit]
+Description=Apache Derby Database
+After=network.target
+
+[Service]
+Type=simple
+SuccessExitStatus=143
+
+Environment="DERBY_HOME=/home/infobuilder/ibi/derby"
+Environment="PATH=$PATH:/home/infobuilder/ibi/derby/bin"
+WorkingDirectory=/home/infobuilder/ibi/derby
+
+User=infobuilder
+Group=infobuilder
+
+ExecStart=/usr/bin/java -Djava.security.manager -Djava.security.policy=/home/infobuilder/ibi/derby/server.policy -Dderby.system.home=/home/infobuilder/ibi/derby -classpath /home/infobuilder/ibi/derby/lib/derbyrun.jar org.apache.derby.drda.NetworkServerControl start
+ExecStop=/home/infobuilder/ibi/derby/bin/stopNetworkServer
+#Restart=always
+#RestartSec=5
+#StartLimitInterval=30
+#StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target
