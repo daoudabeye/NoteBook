@@ -1,0 +1,73 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: public
+    cert-manager.io/cluster-issuer: letsencrypt-microk8s
+    meta.helm.sh/release-name: appserver
+    meta.helm.sh/release-namespace: webfocus
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/affinity-mode: persistent
+    nginx.ingress.kubernetes.io/app-root: /webfocus
+    nginx.ingress.kubernetes.io/client-body-buffer-size: 64k
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-body-size: 200m
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/session-cookie-change-on-failure: "true"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "28800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "28800"
+    nginx.ingress.kubernetes.io/session-cookie-name: sticknesscookie
+    nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
+  labels:
+    app.kubernetes.io/instance: appserver
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: appserver
+    app.kubernetes.io/version: "1.0"
+    helm.sh/chart: appserver-0.1.0
+  name: appserver
+  namespace: webfocus
+spec:
+  rules:
+    - host: anlc.infobuild-sa.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: appserver
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - anlc.infobuild-sa.com
+      secretName: tls-infobuild
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: public
+    cert-manager.io/cluster-issuer: letsencrypt-microk8s
+  name: container-registry
+  namespace: container-registry
+spec:
+  rules:
+    - host: registry.ikawaari.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: registry
+                port:
+                  number: 5000
+  tls:
+    - hosts:
+        - registry.ikawaari.com
+      secretName: tls-registry
+---
